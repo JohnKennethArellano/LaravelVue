@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+@layer components {
+  .container {
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "sidebar main";
+  }
+  .sidebar {
+    grid-area: main;
+    transition: all ease-in 0.3s;
+  }
+  /* .inactiveRoute::before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    transition: all ease 0.3s;
+  }
+
+  .inactiveRoute:hover::before {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+  } */
+
+  .container {
+    @apply grid h-screen w-screen;
+  }
+  .sidebar {
+    @apply w-[18vw] h-screen;
+  }
+  .collapsed {
+    @apply w-[5vw];
+  }
+  .main-content {
+    @apply p-20;
+  }
+  .inactiveRoute {
+    @apply text-lg w-full flex items-center  mb-4 rounded-md  text-gray-700 cursor-pointer overflow-hidden relative;
+  }
+  .activeRoute,
+  .inactiveRoute:hover {
+    @apply bg-gray-200 text-lg transition-all;
+  }
+  .btn-primary {
+    @apply w-auto h-auto px-5 py-2 text-lg bg-red-700 text-white border border-red-700 transition-all rounded-md hover:text-red-700 hover:bg-white flex items-center justify-center;
+  }
+  .btn-secondary {
+    @apply w-auto h-auto px-5 py-2 text-lg bg-red-white text-red-700 border border-red-700 transition-all rounded-md;
+  }
+}
