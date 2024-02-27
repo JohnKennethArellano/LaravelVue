@@ -5,20 +5,22 @@
       <sidebar />
     </div>
     <div class="mainContent">
-      <div class="w-full flex justify-end px-2">
-        <BaseButton>
-          <span class="text-sm">Add</span>
-        </BaseButton>
+      <div class="w-full flex flex-wrap h-[fit-content] gap-[1vw]">
+        <div class="w-full flex justify-end px-2">
+          <BaseButton>
+            <span class="text-sm">Add</span>
+          </BaseButton>
+        </div>
+        <Suspense>
+          <template #default>
+            <MainCard v-for="(student, index) in studentDataFetched" :key="index" :name="student.name"
+              :lrn="student.student_id" :age="student.age" />
+          </template>
+          <template #fallback>
+            <LoaderCard v-for="n in loaderToShow" :key="n" />
+          </template>
+        </Suspense>
       </div>
-      <Suspense>
-        <template #default>
-          <MainCard v-for="(student, index) in studentDataFetched" :key="index" :name="student.name"
-            :lrn="student.student_id" :age="student.age" />
-        </template>
-        <template #fallback>
-          <LoaderCard v-for="n in loaderToShow" :key="n" />
-        </template>
-      </Suspense>
     </div>
   </div>
 </template>

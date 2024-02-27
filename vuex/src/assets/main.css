@@ -47,7 +47,7 @@
     @apply w-[fit-content] h-screen;
   }
   .mainContent {
-    @apply flex flex-wrap justify-center h-[fit-content] gap-2 p-3;
+    @apply flex flex-wrap h-full gap-[1vw] p-3;
   }
   .collapsed {
     @apply w-[5vw];

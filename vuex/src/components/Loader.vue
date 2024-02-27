@@ -1,4 +1,5 @@
 <template>
+    <Teleport to="body">
         <div class="parent">
             <div></div>
             <div></div>
@@ -6,6 +7,7 @@
             <div></div>
             <div></div>
         </div>
+    </Teleport>
 </template>
 
 <style scoped>

@@ -24,7 +24,7 @@ const routes = [
     path: "/features",
     name: "features",
     meta: { isAuthenticated: true },
-    component: () => import("../views/AboutView.vue"),
+    component: () => import("../views/Features.vue"),
   },
   {
     path: "/contact",
