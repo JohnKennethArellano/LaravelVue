@@ -1,11 +1,11 @@
 <template>
-    <div class="parent">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+        <div class="parent">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
 </template>
 
 <style scoped>
@@ -67,4 +67,5 @@
         transform: translateY(0);
         background-color: #98d1ff;
     }
-}</style>
+}
+</style>

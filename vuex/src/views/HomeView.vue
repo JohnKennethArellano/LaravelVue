@@ -75,9 +75,9 @@ function registerUser(ev) {
   ev.preventDefault()
   store.dispatch("login", formdata)
     .then((data) => {
-      console.log(data)
-      if (data.message == "wrong credentials") {
-        console.log(data.message)
+      // const err = this.rules.data?.message
+      console.log(data?.message)
+      if (data.message) {
         Swal.fire({
           text: data.message,
           icon: 'error',

@@ -4,6 +4,12 @@ export const mutations = {
   setUser: (state, username) => {
     state.data.username = username;
   },
+  setToken: (state, token) => {
+    state.user.token = token;
+  },
+  setAuth: (state, auth) => {
+    state.user.isAuth = auth;
+  },
   showLoading: (state, showLoading) => {
     state.loading.showLoading = showLoading;
   },
@@ -12,5 +18,7 @@ export const mutations = {
   },
   logout: (state) => {
     state.data.username = "";
+    state.user.token = "";
+    state.user.isAuth = false;
   },
 };

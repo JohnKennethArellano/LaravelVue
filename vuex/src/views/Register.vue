@@ -1,50 +1,37 @@
 <template>
   <div class="shadow-lg p-8 rounded-md">
-    <form @submit.prevent="submitForm" class="flex flex-col h-auto w-auto">
+    <BaseForm @submit.prevent="submitForm">
       <span class="w-full flex justify-center">
         <h1 class="font-bold text-3xl text-gray-700">Register</h1>
       </span>
       <div class="flex flex-col w-auto h-auto mb-2">
-        <label for="name" class="w-full h-auto">Name</label>
-        <input type="text" v-model="formdata.name"
-          class="w-[20vw] py-2 px-4 outline-none focus:ring rounded text-md border border-gray-400">
-        <p v-for="error in $v.name.$errors" :key="error.$uid" class="text-red-500 text-xs w-full ">{{
-          error.$message }}
-        </p>
+        <BaseLabel for="name" text="Name" />
+        <BaseInput type="text" v-model="formdata.name" />
+        <BaseError v-for="error in $v.name.$errors" :key="error.$uid" :msg="error.$message" />
       </div>
       <div class="flex flex-col w-auto h-auto mb-2">
-        <label for="email" class="w-full h-auto">Email</label>
-        <input type="text" v-model="formdata.email"
-          class="w-[20vw] py-2 px-4 outline-none focus:ring rounded text-md border border-gray-400">
-        <p v-for="error in $v.email.$errors" :key="error.$uid" class="text-red-500 text-xs w-full ">{{
-          error.$message }}
-        </p>
+        <BaseLabel for="email" text="Email" />
+        <BaseInput type="text" v-model="formdata.email" />
+        <BaseError v-for="error in $v.email.$errors" :key="error.$uid" :msg="error.$message" />
       </div>
       <div class="flex flex-col w-auto h-auto mb-2">
-        <label for="password" class="w-full h-auto">Password</label>
-        <input type="text" v-model="formdata.password"
-          class="w-[20vw] py-2 px-4 outline-none focus:ring rounded text-md border border-gray-400">
-        <p v-for="error in $v.password.$errors" :key="error.$uid" class="text-red-500 text-xs w-full ">{{
-          error.$message }}
-        </p>
+        <BaseLabel for="password" text="Password" />
+        <BaseInput type="text" v-model="formdata.password" />
+        <BaseError v-for="error in $v.password.$errors" :key="error.$uid" :msg="error.$message" />
       </div>
       <div class="flex flex-col w-auto h-auto mb-2">
-        <label for="password_confirmation" class="w-full h-auto">Confirm your password</label>
-        <input type="text" v-model="formdata.password_confirmation"
-          class="w-[20vw] py-2 px-4 outline-none focus:ring rounded text-md border border-gray-400">
-        <p v-for="error in $v.password_confirmation.$errors" :key="error.$uid" class="text-red-500 text-xs w-full ">
-          {{
-            error.$message }}
-        </p>
+        <BaseLabel for="password_confirmation" text="Confirm password" />
+        <BaseInput type="text" v-model="formdata.password_confirmation" />
+        <BaseError v-for="error in $v.password_confirmation.$errors" :key="error.$uid" :msg="error.$message" />
       </div>
-      <button type="submit" class="border rounded-lg relative h-[3vw] flex items-center justify-center">
+      <BaseButton type="submit" class="btn-primary">
         <Loader v-if="loading"></Loader>
         <span v-else>Register</span>
-      </button>
+      </BaseButton>
       <span class="w-full flex justify-center mt-3 text-sm">
         <router-link to="/">Login here</router-link>
       </span>
-    </form>
+    </BaseForm>
   </div>
 </template>
 

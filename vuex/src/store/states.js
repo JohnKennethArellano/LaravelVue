@@ -11,6 +11,8 @@ export const state = reactive({
     collapsed: false,
   },
   user : {
-    data : []
+    data : [],
+    token : "",
+    isAuth : false
   }
 });

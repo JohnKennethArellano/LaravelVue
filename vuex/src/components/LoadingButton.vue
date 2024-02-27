@@ -7,7 +7,7 @@
     width: 2vw;
     height: 2vw;
     border-radius: 50%;
-    border: 4px solid #766DF4;
+    border: 4px solid #B91C1C;
     animation:
         s10-1 0.8s infinite linear alternate,
         s10-2 1.6s infinite linear;
