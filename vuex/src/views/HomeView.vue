@@ -77,7 +77,7 @@ function registerUser(ev) {
     .then((data) => {
       // const err = this.rules.data?.message
       console.log(data?.message)
-      if (data.message) {
+      if (data.message == "Wrong credentials") {
         Swal.fire({
           text: data.message,
           icon: 'error',

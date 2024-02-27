@@ -14,5 +14,8 @@ export const state = reactive({
     data : [],
     token : "",
     isAuth : false
+  },
+  students : {
+    data : []
   }
 });

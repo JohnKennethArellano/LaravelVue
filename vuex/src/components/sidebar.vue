@@ -1,11 +1,11 @@
 <template>
-    <nav class="relative h-full shadow-lg  p-5" :class="{ 'collapsed': sidebarState }">
-        <ul class="flex flex-col w-full h-full relative">
-            <div class="w-full flex justify-end" :class="{ 'justify-center': sidebarState }">
+    <nav class="relative w-[18vw] flex   h-full shadow-lg  p-5" :class="{ 'w-[5vw]': sidebarState }">
+        <ul class="flex flex-col w-[100%] h-full relative">
+            <div class="w-[100%] flex justify-end" :class="{ 'justify-center': sidebarState }">
                 <icon :icon="sidebarState ? 'square-caret-right' : 'square-caret-left'" @click="toggleSideBarSize"
                     class="transition-all text-[2vw]" />
             </div>
-            <div class="flex justify-center w-full h-[10vh] p-5">
+            <div class="flex justify-center w-[fit-content] h-[10vh] p-5">
                 <span :class="{ 'hidden': sidebarState }">Welcome, {{ userLogin }}</span>
             </div>
             <li v-for="(item, index) in links" :key="index">
@@ -19,7 +19,7 @@
                     </div>
                 </div>
             </li>
-            <div class="w-full absolute bottom-0 flex justify-center">
+            <div class="w-[100%] absolute bottom-0 flex justify-center">
                 <icon icon="power-off" @click="logout" />
             </div>
         </ul>

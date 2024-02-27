@@ -21,4 +21,7 @@ export const mutations = {
     state.user.token = "";
     state.user.isAuth = false;
   },
+  setStudents: (state , data)=>{
+    state.students.data = data;
+  }
 };

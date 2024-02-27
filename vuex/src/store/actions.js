@@ -1,5 +1,8 @@
 import AxiosClient from "@/AxiosClient";
 import Csrf from "@/RandomToken";
+import fetch from "../fetchdata";
+import axios from "axios";
+
 export const actions = {
   async login({ commit }, user) {
     const cookie = Csrf.randomToken(20);
@@ -39,5 +42,13 @@ export const actions = {
   },
   async sideBar({ commit }, value) {
     commit("sidebarToggle", value);
+  },
+  async getData({ commit }) {
+    return fetch
+      .getData("https://run.mocky.io/v3/cab8c321-5f0d-4aa2-a494-0c280a9c4a0f")
+      .then(({ data }) => {
+        console.log("fetched");
+        commit("setStudents", data);
+      });
   },
 };

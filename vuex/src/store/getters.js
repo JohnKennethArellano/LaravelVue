@@ -7,4 +7,7 @@ export const getters = {
   getSidebarState: (state) => {
     return state.sidebar.collapsed;
   },
+  getStudentsData: (state) => {
+    return state.students.data;
+  },
 };

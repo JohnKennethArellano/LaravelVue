@@ -16,6 +16,10 @@
     grid-template-areas: "sidebar main";
   }
   .sidebar {
+    grid-area: sidebar;
+    transition: all ease-in 0.3s;
+  }
+  .mainContent {
     grid-area: main;
     transition: all ease-in 0.3s;
   }
@@ -37,10 +41,13 @@
   } */
 
   .container {
-    @apply grid h-screen w-screen;
+    @apply grid h-screen w-screen overflow-hidden;
   }
   .sidebar {
-    @apply w-[18vw] h-screen;
+    @apply w-[fit-content] h-screen;
+  }
+  .mainContent {
+    @apply flex flex-wrap justify-center h-[fit-content] gap-2 p-3;
   }
   .collapsed {
     @apply w-[5vw];
