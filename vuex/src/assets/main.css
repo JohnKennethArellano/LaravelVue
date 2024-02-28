@@ -63,7 +63,7 @@
     @apply bg-gray-200 text-lg transition-all;
   }
   .btn-primary {
-    @apply w-auto h-auto px-5 py-2 text-lg bg-red-700 text-white border border-red-700 transition-all rounded-md hover:text-red-700 hover:bg-white flex items-center justify-center;
+    @apply w-auto h-auto px-5 py-2 text-lg bg-red-700 text-white border border-none transition-all rounded-md hover:bg-red-500 flex items-center justify-center;
   }
   .btn-secondary {
     @apply w-auto h-auto px-5 py-2 text-lg bg-red-white text-red-700 border border-red-700 transition-all rounded-md;

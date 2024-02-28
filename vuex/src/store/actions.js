@@ -47,7 +47,7 @@ export const actions = {
     return fetch
       .getData("https://run.mocky.io/v3/cab8c321-5f0d-4aa2-a494-0c280a9c4a0f")
       .then(({ data }) => {
-        console.log("fetched");
+        console.log(Object.values(data));
         commit("setStudents", data);
       });
   },
